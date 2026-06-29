@@ -1,0 +1,19 @@
+{
+  "name": "TONEX ONE BLE Controller",
+  "short_name": "TONEX BLE",
+  "description": "Android BLE-MIDI controller for Builty TonexOneController on Waveshare Zero.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#141311",
+  "background_color": "#141311",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
