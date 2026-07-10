@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="TONEX BLE icon">
+  <rect width="512" height="512" rx="96" fill="#141311"/>
+  <rect x="126" y="76" width="260" height="360" rx="34" fill="#2d2923" stroke="#f6f1e8" stroke-width="12"/>
+  <rect x="174" y="118" width="164" height="86" rx="10" fill="#191713" stroke="#4b453a" stroke-width="8"/>
+  <circle cx="209" cy="264" r="30" fill="#f05b57"/>
+  <circle cx="303" cy="264" r="30" fill="#28d07f"/>
+  <rect x="184" y="334" width="144" height="44" rx="22" fill="#65d4ff"/>
+  <path d="M348 160c30 18 50 51 50 88s-20 70-50 88" fill="none" stroke="#ffba3a" stroke-width="20" stroke-linecap="round"/>
+  <path d="M378 118c45 27 76 75 76 130s-31 103-76 130" fill="none" stroke="#ffba3a" stroke-width="20" stroke-linecap="round" opacity=".72"/>
+</svg>
