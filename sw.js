@@ -1,4 +1,4 @@
-const CACHE_NAME = "tonex-one-ble-controller-v6";
+const CACHE_NAME = "tonex-one-ble-controller-v7";
 const APP_FILES = [
   "./",
   "./index.html",

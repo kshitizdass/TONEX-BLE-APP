@@ -1,12 +1,12 @@
 :root {
   color-scheme: dark;
-  --bg: #090a08;
-  --panel: #1a1b17;
-  --panel-2: #25251f;
-  --surface: #11130f;
+  --bg: #050607;
+  --panel: #121417;
+  --panel-2: #191c20;
+  --surface: #0d0f12;
   --ink: #f6f1e8;
   --muted: #b7afa1;
-  --line: #3c3a31;
+  --line: #272d33;
   --green: #28d07f;
   --green-dark: #11764b;
   --cyan: #65d4ff;
@@ -35,9 +35,10 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    radial-gradient(circle at 50% 0%, rgba(215, 212, 47, 0.12), transparent 34rem),
-    linear-gradient(180deg, rgba(40, 208, 127, 0.08), transparent 270px),
-    linear-gradient(90deg, rgba(101, 212, 255, 0.05), transparent 46%, rgba(255, 186, 58, 0.045)),
+    linear-gradient(180deg, rgba(40, 208, 127, 0.07), transparent 290px),
+    linear-gradient(90deg, rgba(101, 212, 255, 0.04), transparent 42%, rgba(255, 186, 58, 0.04)),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 82px),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.014) 0 1px, transparent 1px 82px),
     var(--bg);
 }
 
@@ -112,11 +113,122 @@ input[type="range"] {
 }
 
 .app-shell {
-  width: min(1120px, 100%);
+  width: min(1480px, 100%);
   margin: 0 auto;
-  padding: max(18px, env(safe-area-inset-top)) 16px 28px;
+  padding: max(14px, env(safe-area-inset-top)) 16px calc(86px + env(safe-area-inset-bottom));
   display: grid;
   gap: 14px;
+}
+
+.side-nav {
+  display: none;
+}
+
+.side-logo {
+  display: grid;
+  gap: 2px;
+  padding: 14px 12px 18px;
+}
+
+.side-logo strong {
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.side-logo span {
+  color: var(--bias-yellow);
+}
+
+.side-logo small {
+  color: var(--ink);
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.nav-list {
+  display: grid;
+  gap: 6px;
+}
+
+.nav-list a,
+.bottom-nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.nav-list a {
+  padding: 13px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 750;
+}
+
+.nav-list a.active,
+.nav-list a:hover {
+  color: var(--ink);
+  background: rgba(40, 208, 127, 0.14);
+  box-shadow: inset 3px 0 0 var(--green);
+}
+
+.side-device {
+  display: grid;
+  gap: 4px;
+  margin-top: auto;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(246, 241, 232, 0.04), transparent),
+    rgba(19, 22, 25, 0.92);
+}
+
+.side-device strong {
+  font-size: 0.9rem;
+}
+
+.side-device span {
+  color: var(--green);
+  font-size: 0.76rem;
+  font-weight: 850;
+}
+
+.side-device em {
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.bottom-nav {
+  position: fixed;
+  z-index: 20;
+  left: 10px;
+  right: 10px;
+  bottom: max(10px, env(safe-area-inset-bottom));
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 4px;
+  padding: 8px;
+  border: 1px solid rgba(246, 241, 232, 0.12);
+  border-radius: 8px;
+  background: rgba(8, 10, 12, 0.94);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.58);
+  backdrop-filter: blur(16px);
+}
+
+.bottom-nav a {
+  display: grid;
+  place-items: center;
+  min-height: 42px;
+  border-radius: 7px;
+  font-size: 0.67rem;
+  font-weight: 850;
+}
+
+.bottom-nav a.active {
+  color: var(--green);
+  background: rgba(40, 208, 127, 0.12);
 }
 
 .topbar,
@@ -134,7 +246,7 @@ input[type="range"] {
   background: rgba(33, 31, 27, 0.94);
   border: 1px solid var(--line);
   border-radius: 8px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.46);
 }
 
 .preset-panel,
@@ -152,9 +264,9 @@ input[type="range"] {
 .topbar,
 .connection-panel {
   background:
-    linear-gradient(135deg, rgba(215, 212, 47, 0.09), transparent 56%),
+    linear-gradient(135deg, rgba(40, 208, 127, 0.08), transparent 56%),
     linear-gradient(180deg, rgba(246, 241, 232, 0.05), transparent),
-    rgba(24, 25, 21, 0.96);
+    rgba(12, 15, 18, 0.96);
 }
 
 .topbar {
@@ -317,9 +429,10 @@ h2 {
   padding: 0;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 18%, rgba(215, 212, 47, 0.18), transparent 24rem),
-    linear-gradient(112deg, rgba(215, 212, 47, 0.14), transparent 44%),
-    linear-gradient(180deg, #070806, #171913);
+    linear-gradient(116deg, rgba(40, 208, 127, 0.1), transparent 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 44%),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 56px),
+    linear-gradient(180deg, #090b0d, #111417);
 }
 
 .rig-stage {
@@ -341,16 +454,15 @@ h2 {
 
 .rig-meta h2 {
   margin-top: 4px;
-  color: var(--muted);
-  font-size: 0.86rem;
-  text-transform: uppercase;
+  color: var(--ink);
+  font-size: 1.35rem;
 }
 
 .rig-meta strong {
   display: block;
   margin-top: 6px;
   color: var(--ink);
-  font-size: clamp(1.45rem, 4vw, 2.35rem);
+  font-size: clamp(1.25rem, 3.2vw, 2rem);
   line-height: 1;
 }
 
@@ -460,8 +572,8 @@ h2 {
   border-radius: 8px;
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0.24), transparent),
-    radial-gradient(circle at 50% 0%, rgba(215, 212, 47, 0.12), transparent 55%),
-    #0d0e0c;
+    linear-gradient(90deg, rgba(40, 208, 127, 0.08), transparent 55%),
+    #080a0c;
 }
 
 .amp-focus img {
@@ -575,6 +687,29 @@ h2 {
   white-space: nowrap;
 }
 
+.preset-tabs {
+  display: flex;
+  gap: 8px;
+  margin: -2px 0 12px;
+  overflow-x: auto;
+}
+
+.preset-tabs span {
+  min-width: 86px;
+  padding: 8px 10px;
+  border-bottom: 1px solid transparent;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.preset-tabs span.active {
+  color: var(--green);
+  border-color: var(--green);
+}
+
 .bank-row {
   display: grid;
   grid-template-columns: minmax(80px, 1fr) minmax(110px, 130px) minmax(80px, 1fr);
@@ -599,7 +734,7 @@ h2 {
 }
 
 .preset-button {
-  aspect-ratio: 1 / 1.08;
+  aspect-ratio: 1.28 / 1;
   display: grid;
   grid-template-rows: minmax(0, 1fr) auto;
   align-content: stretch;
@@ -609,8 +744,8 @@ h2 {
   overflow: hidden;
   text-align: left;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 48%),
-    #191713;
+    linear-gradient(180deg, rgba(255, 255, 255, 0.052), transparent 48%),
+    #101317;
 }
 
 .preset-button:hover {
@@ -624,7 +759,7 @@ h2 {
   padding: 5px;
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0.1), transparent),
-    #0f120f;
+    #080a0c;
 }
 
 .preset-art img {
@@ -676,7 +811,7 @@ h2 {
 .preset-button.active {
   background:
     linear-gradient(180deg, rgba(40, 208, 127, 0.18), transparent 60%),
-    #172017;
+    #101a16;
   border-color: var(--green);
   box-shadow: inset 0 0 0 1px rgba(40, 208, 127, 0.45);
 }
@@ -1435,5 +1570,84 @@ h2 {
 
   .preset-edit-row .field:last-child {
     grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1020px) {
+  .app-shell {
+    grid-template-columns: 138px minmax(0, 1.02fr) minmax(360px, 0.98fr);
+    align-items: start;
+  }
+
+  .side-nav {
+    position: sticky;
+    top: 14px;
+    grid-column: 1;
+    grid-row: 1 / span 10;
+    min-height: calc(100vh - 28px);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 10px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background:
+      linear-gradient(180deg, rgba(40, 208, 127, 0.08), transparent 36%),
+      rgba(8, 10, 12, 0.94);
+    box-shadow: 0 22px 54px rgba(0, 0, 0, 0.46);
+  }
+
+  .bottom-nav {
+    display: none;
+  }
+
+  .topbar {
+    grid-column: 2 / -1;
+  }
+
+  .connection-panel {
+    grid-column: 2 / -1;
+  }
+
+  .rig-panel,
+  .parameter-panel,
+  .controls-panel {
+    grid-column: 2;
+  }
+
+  .preset-panel,
+  .effects-panel,
+  .global-panel,
+  .tuner-panel,
+  .custom-panel,
+  .settings-panel,
+  .console-panel {
+    grid-column: 3;
+  }
+
+  .preset-panel {
+    grid-row: 3 / span 3;
+  }
+
+  .rig-stage {
+    min-height: 356px;
+  }
+
+  .preset-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .slider-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .effects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1019px) {
+  .side-nav {
+    display: none;
   }
 }
